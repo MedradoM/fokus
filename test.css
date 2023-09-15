@@ -1,0 +1,51 @@
+*{
+    max-width: 100%;
+}
+
+.alteraBackground{
+    display: flex;
+    padding: 20px;
+    gap: 10px;
+}
+
+.alteraTexto{
+    display: flex;
+    padding: 20px;
+    gap: 10px;
+}
+
+.dark{
+    color: var(--main-bg-color);
+    background-color: var(--but-bg-color);
+    padding: 45px;
+}
+
+.white{
+    background-color: var(--main-bg-color);
+    color: var(--but-bg-color);
+    padding: 45px;
+}
+
+[data-contexto="segundo"] {
+    --main-bg-color: #323232;
+    --btn-bg-color: crimson;
+    --but-bg-color: white;
+}
+
+[data-contexto="primeiro"] {
+    --main-bg-color: #f5f5f5;
+    --btn-bg-color: #999900;
+    --but-bg-color: #323232;
+}
+
+body{
+    background-color: var(--main-bg-color);
+}
+
+#btn_musica{
+    background: #999900;
+    color: #f5f5f5;
+    margin: 20px;
+    padding: 20px 125px;
+    border-radius: 10px;
+}

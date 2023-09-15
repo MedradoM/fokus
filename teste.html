@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br" data-contexto="primeiro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>teste</title>
+    <link rel="stylesheet" href="./test.css">
+</head>
+<body>
+
+    <span id="hora"></span>
+
+    <form id="formulario">
+        <input type="text" name="nome" />
+        <input type="submit" name="enviar">
+    </form>
+    <div class="alteraBackground">
+        <button id="darkmode" class="dark">Dark mode</button>
+        <button id="whitemode" class="white">White mode</button>
+    </div>
+    <h1 id="txt_alt">TITULO GENERICO</h1>
+    <div class="alteraTexto">
+        <button id="btn_txt" class="dark">clique aqui</button>
+        <button id="btn_nxt" class="white">clique aqui</button>
+    </div>    
+
+    <button id="btn_musica">Musiquinha</button>
+    <script>
+        const html = document.querySelector('html')
+
+        const formulario = document.getElementById("formulario");
+        formulario.addEventListener("submit", (event) => {
+            event.preventDefault;
+            const nome = event.target.elements.nome.value;
+            alert(`Você digitou:  ${nome}... uuuh very nice`);
+        });
+
+
+        const bkg = document.getElementById('darkmode');
+        bkg.addEventListener('click', () => {
+            html.setAttribute('data-contexto', 'segundo');        
+        })
+
+        const wkg = document.getElementById('whitemode');
+        wkg.addEventListener('click', () => {
+            html.setAttribute('data-contexto', 'primeiro')
+        })
+
+        const altTxt = document.getElementById('txt_alt');
+        const alteraTexto = document.getElementById('btn_txt')
+        alteraTexto.addEventListener('click', () => {
+            altTxt.innerHTML = "nada não kkk";         
+        })
+
+        const textoAltera = document.getElementById('btn_nxt');
+        textoAltera.addEventListener('click', () => {
+            altTxt.innerHTML = "TITULO GENÉRICO";
+        })
+
+        const musica = new Audio ('./sons/luna-rise-part-one.mp3')
+        const btn_musica = document.getElementById('btn_musica')
+        btn_musica.addEventListener('click', () => {
+            musica.play()
+        })
+
+        const pausaMsc = () => {
+            musica.stop()
+        }
+
+        const hora = new Date();
+        hora = currentDate.getHours();
+        const mostrarHora = document.getElementById('hora')
+        mostrarHora.innerHTML = `${hora}`;
+
+    </script>
+</body>
+</html>
